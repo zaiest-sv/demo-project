@@ -1,0 +1,18 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+.main-container {
+  padding: 5%;
+  table {
+    width: 100%;
+  }
+
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+
+  .link-for-redirect{
+    text-decoration: underline;
+    color: #1D4ED8;
+  }
+}

@@ -1,0 +1,17 @@
+<div class="card">
+  <h2>{{ user?.name }}</h2>
+  <p>{{ user?.email }}</p>
+  <p>{{ user?.phone }}</p>
+  <p>{{ user?.website }}</p>
+</div>
+
+<h3>Posts</h3>
+<div *ngFor="let post of posts" class="card">
+  <h4>{{ post.title }}</h4>
+  <p>{{ post.body }}</p>
+  <p>Number of comments: {{ post.comments?.length }}</p>
+<!--  <div *ngIf="post === posts[0]" class="top-post-label">Top post</div>-->
+  <div class="top-post-label">Top post</div>
+</div>
+
+
