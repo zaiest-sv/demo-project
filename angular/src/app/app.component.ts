@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular';
+
+  items = [
+    {
+      label: 'Users List',
+      icon: 'pi pi-home',
+      routerLink: '/user/list'
+    },
+    {
+      label: 'Users Details',
+      icon: 'pi pi-home',
+      routerLink: '/user/details/1'
+    },
+  ];
 }

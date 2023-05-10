@@ -1,0 +1,56 @@
+<div class="main-container">
+  <div class="card">
+    <p-table
+      #dt
+      [value]="this.users"
+      selectionMode="single"
+      dataKey="id"
+      [rows]="5"
+      [showCurrentPageReport]="true"
+      [rowsPerPageOptions]="[5, 10, 25, 50]"
+      [loading]="this.loading"
+      [paginator]="true"
+      [globalFilterFields]="['id', 'name', 'email', 'phone', 'website']"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    >
+      <ng-template pTemplate="caption">
+        <div class="flex">
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="this.searchInTable($event)" placeholder="Search keyword" />
+            </span>
+        </div>
+      </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="id" style="width:10%">Id <p-sortIcon field="id"></p-sortIcon></th>
+        <th pSortableColumn="name" style="width:20%">Name <p-sortIcon field="name"></p-sortIcon></th>
+        <th pSortableColumn="email" style="width:20%">Email <p-sortIcon field="email"></p-sortIcon></th>
+        <th pSortableColumn="phone" style="width:20%">Phone <p-sortIcon field="phone"></p-sortIcon></th>
+        <th pSortableColumn="website" style="width:20%">Website <p-sortIcon field="website"></p-sortIcon></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr [pSelectableRow]="user">
+        <td>
+          {{user?.id}}
+        </td>
+        <td class="link-for-redirect" (click)="openDetailsPage(user?.id)">
+          {{user?.name}}
+        </td>
+        <td>
+          {{user?.email}}
+        </td>
+        <td>
+          {{user?.phone}}
+        </td>
+        <td>
+          {{user?.website}}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  </div>
+</div>
