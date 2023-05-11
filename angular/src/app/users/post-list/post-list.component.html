@@ -1,0 +1,33 @@
+<div class="main-posts-container">
+  <p>Posts</p>
+  <div class="grid-posts-container">
+    <div class="post" *ngFor="let post of posts">
+
+      <p-fieldset legend="Title: {{ post?.title }}">
+        <p class="m-0">Post: {{ post?.body }}</p>
+        <p class="m-0">Number of commenters: 0</p>
+      </p-fieldset>
+<!--      <p-card>-->
+<!--        <ng-template pTemplate="header">-->
+<!--          <h4>{{ post?.title }}</h4>-->
+<!--          <p class="m-0">{{ post?.title }}</p>-->
+<!--        </ng-template>-->
+
+<!--        <ng-template pTemplate="content">-->
+<!--          <p>{{ post?.body }}</p>-->
+<!--        </ng-template>-->
+
+<!--        <ng-template pTemplate="footer">-->
+<!--          <div class="comment-section">-->
+<!--            <h5>Comments:</h5>-->
+<!--            <ul>-->
+<!--              <li *ngFor="let comment of post?.comments">{{ comment }}</li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </ng-template>-->
+<!--      </p-card>-->
+    </div>
+  </div>
+</div>
+
+

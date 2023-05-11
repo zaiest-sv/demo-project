@@ -1,17 +1,141 @@
-<div class="card">
-  <h2>{{ user?.name }}</h2>
-  <p>{{ user?.email }}</p>
-  <p>{{ user?.phone }}</p>
-  <p>{{ user?.website }}</p>
+<!--<div class="card">-->
+<!--  <h2>{{ user?.name }}</h2>-->
+<!--  <p>{{ user?.email }}</p>-->
+<!--  <p>{{ user?.phone }}</p>-->
+<!--  <p>{{ user?.website }}</p>-->
+<!--</div>-->
+
+<!--<h3>Posts</h3>-->
+<!--<div *ngFor="let post of posts" class="card">-->
+<!--  <h4>{{ post.title }}</h4>-->
+<!--  <p>{{ post.body }}</p>-->
+<!--  <p>Number of comments: {{ post.comments?.length }}</p>-->
+<!--  &lt;!&ndash;  <div *ngIf="post === posts[0]" class="top-post-label">Top post</div>&ndash;&gt;-->
+<!--  <div class="top-post-label">Top post</div>-->
+<!--</div>-->
+
+<div class="card grid dashboard">
+  <div class="col-12 md:col-6 lg:col-4">
+    <div class="user-card card">
+      <div class="user-card-header">
+        <img src="assets/layout/dashboard/bg-head.jpg" class="img-bg-head" alt="prestige-layout">
+      </div>
+      <div class="user-card-content">
+        <div style="display: flex; justify-content: space-between">
+          <div class="avatar-info">
+            <img src="{{this.fileIcon}}" class="img-avatar" alt="prestige-layout">
+            <div>
+              <div class="user-card-name">
+                <span>{{user?.name}}</span>
+              </div>
+              <div class="user-card-username">
+                <span>{{user?.username}}</span>
+              </div>
+            </div>
+          </div>
+          <!--          <button pbutton="" type="button" icon="pi pi-cog" class="button-icon p-element p-button p-component p-button-icon-only">-->
+          <!--&lt;!&ndash;            <span class="p-button-icon pi pi-cog" aria-hidden="true"></span>&ndash;&gt;-->
+
+          <!--            <p-fileUpload-->
+          <!--              mode="basic"-->
+          <!--              chooseLabel="Choose"-->
+          <!--              name="demo[]"-->
+          <!--              url="https://www.primefaces.org/cdn/api/upload.php"-->
+          <!--              accept="image/*"-->
+          <!--              maxFileSize="1000000"-->
+          <!--              (onUpload)="onUpload($event)"-->
+          <!--            >-->
+          <!--            </p-fileUpload>-->
+          <!--          </button>-->
+
+          <div class="file-upload flex justify-content-center">
+            <p-toast></p-toast>
+            <p-fileUpload
+              mode="basic"
+              chooseLabel="Choose"
+              name="demo[]"
+              url="https://www.primefaces.org/cdn/api/upload.php"
+              accept="image/*"
+              (onUpload)="onUpload($event)"
+            >
+            </p-fileUpload>
+          </div>
+        </div>
+
+        <!-- details -->
+        <div class="user-detail">
+          <div>
+            <p>
+              <b><i class="user-detail-label">Email:</i></b><br>
+              {{ user?.email }}
+              <br>
+            </p>
+            <p>
+              <b><i class="user-detail-label">Phone:</i></b><br>
+              {{ user?.phone }}
+              <br>
+            </p>
+            <p>
+              <b><i class="user-detail-label">Website:</i></b><br>
+              {{ user?.website }}
+              <br>
+            </p>
+          </div>
+          <div>
+            <p>
+              <b><i class="user-detail-label">Address:</i></b>
+              {{ user?.address?.city }}, {{ user?.address?.suite }}, {{ user?.address?.street }}
+              <br><b class="whiteColor">Zip Code:</b> {{ user?.address?.zipcode }}
+              <br><b class="whiteColor">Geo:</b> lat = {{ user?.address?.geo?.lat }}, lng = {{ user?.address?.geo?.lng }}
+            </p>
+
+            <p>
+              <b><i class="user-detail-label">Company:</i></b>
+              {{ user?.company?.name }}
+              <br><b class="whiteColor">Catch Phrase:</b> {{ user?.company?.catchPhrase }}
+              <br><b class="whiteColor">Bs:</b> lat = {{ user?.company?.bs }}
+            </p>
+          </div>
+        </div>
+
+        <app-post-list [userId]="this.user?.id"></app-post-list>
+
+<!--        <p-card>-->
+<!--          <ng-template pTemplate="header">-->
+<!--            <h4>{{ posts?.title }}</h4>-->
+<!--          </ng-template>-->
+
+<!--          <ng-template pTemplate="content">-->
+<!--            <p>{{ posts?.body }}</p>-->
+<!--          </ng-template>-->
+
+<!--          <ng-template pTemplate="footer">-->
+<!--            <div class="comment-section">-->
+<!--              <h5>Comments:</h5>-->
+<!--              <ul>-->
+<!--                <li *ngFor="let comment of posts?.comments">{{ comment }}</li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </ng-template>-->
+<!--        </p-card>-->
+
+<!--        <div class="user-detail">-->
+<!--          <ul>-->
+<!--            <li> email-->
+<!--              <div class="value">{{ user?.email }} <i class="pi pi-arrow-circle-right"></i></div>-->
+<!--            </li>-->
+<!--            <li> Address-->
+<!--              <div class="value">{{ user?.address?.city }} <i class="pi pi-arrow-circle-right"></i></div>-->
+<!--            </li>-->
+<!--            <li> Likes-->
+<!--              <div class="value">880 <i class="pi pi-arrow-circle-right"></i></div>-->
+<!--            </li>-->
+<!--            <li> Views-->
+<!--              <div class="value">1298 <i class="pi pi-arrow-circle-right"></i></div>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+      </div>
+    </div>
+  </div>
 </div>
-
-<h3>Posts</h3>
-<div *ngFor="let post of posts" class="card">
-  <h4>{{ post.title }}</h4>
-  <p>{{ post.body }}</p>
-  <p>Number of comments: {{ post.comments?.length }}</p>
-<!--  <div *ngIf="post === posts[0]" class="top-post-label">Top post</div>-->
-  <div class="top-post-label">Top post</div>
-</div>
-
-

@@ -14,16 +14,59 @@
       [tableStyle]="{ 'min-width': '50rem' }"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
     >
-      <ng-template pTemplate="caption">
-        <div class="flex">
-            <span class="p-input-icon-left ml-auto">
-                <i class="pi pi-search"></i>
-                <input pInputText type="text" (input)="this.searchInTable($event)" placeholder="Search keyword" />
-            </span>
-        </div>
-      </ng-template>
+<!--      <ng-template pTemplate="caption">-->
+<!--        <div class="flex">-->
+<!--            <span class="p-input-icon-left ml-auto">-->
+<!--                <i class="pi pi-search"></i>-->
+<!--                <input pInputText type="text" (input)="this.searchInTable($event)" placeholder="Search keyword" />-->
+<!--            </span>-->
+<!--        </div>-->
+<!--      </ng-template>-->
 
     <ng-template pTemplate="header">
+      <tr>
+        <th>
+          <p-columnFilter [showMenu]="false">
+            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+              <p-dropdown [ngModel]="value" [options]="this.filterId" (onChange)="dt.filter($event?.value, 'id', 'equals')" placeholder="Filter Id" [showClear]="true">
+                <ng-template let-option pTemplate="item">
+                  <span class="ml-1 mt-1">{{ option.value }}</span>
+                </ng-template>
+              </p-dropdown>
+            </ng-template>
+          </p-columnFilter>
+        </th>
+
+        <th>
+          <p-columnFilter [showMenu]="false">
+            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+              <p-multiSelect
+                [options]="filterName"
+                (onChange)="dt.filter($event.value, 'name','in')"
+                placeholder="Filter Name"
+              >
+                <ng-template let-option pTemplate="item">
+                  <span class="ml-1 mt-1">{{ option.value }}</span>
+                </ng-template>
+              </p-multiSelect>
+            </ng-template>
+          </p-columnFilter>
+        </th>
+        <th>
+          <p-columnFilter [showMenu]="false" type="text" field="email"></p-columnFilter>
+        </th>
+        <th style="min-width: 220px">
+          <p-columnFilter type="text" field="phone"></p-columnFilter>
+        </th>
+        <th>
+          <div class="flex">
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="this.searchInTable($event)" placeholder="Search by all fields" />
+            </span>
+          </div>
+        </th>
+      </tr>
       <tr>
         <th pSortableColumn="id" style="width:10%">Id <p-sortIcon field="id"></p-sortIcon></th>
         <th pSortableColumn="name" style="width:20%">Name <p-sortIcon field="name"></p-sortIcon></th>
