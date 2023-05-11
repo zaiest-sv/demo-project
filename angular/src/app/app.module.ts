@@ -7,11 +7,11 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { TableModule } from "primeng/table";
-import { UsersService } from "./shared/users.service";
-import { PostsService } from "./shared/posts.service";
+import { UsersService } from "./shared/users/users.service";
+import { PostsService } from "./shared/posts/posts.service";
 import { PanelModule } from "primeng/panel";
 import { MenubarModule } from "primeng/menubar";
+import {MessageService} from "primeng/api";
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,9 +26,8 @@ import { MenubarModule } from "primeng/menubar";
   ],
   exports: [
     ReactiveFormsModule,
-    TableModule,
   ],
   bootstrap: [AppComponent],
-  providers: [UsersService, PostsService]
+  providers: [UsersService, PostsService, MessageService]
 })
 export class AppModule {}
