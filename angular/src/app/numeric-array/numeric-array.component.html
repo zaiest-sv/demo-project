@@ -1,6 +1,7 @@
 <div class="main-container">
   <div>
-    <input pInputText type="text" class="p-inputtext-sm" [(ngModel)]="inputValue" (keydown.space)="addNumber()" (keyup.enter)="calculate()"/>
+    <input pInputText type="text" class="p-inputtext-sm" [(ngModel)]="inputValue" (keydown.space)="addNumber()"
+           (keyup.enter)="calculate()"/>
     <p-button label="Calculate" styleClass="p-button-secondary" (click)="calculate()"></p-button>
     <p-button label="Clear" styleClass="p-button-warning" (click)="clear()"></p-button>
   </div>
