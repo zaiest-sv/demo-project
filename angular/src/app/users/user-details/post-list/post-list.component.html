@@ -1,0 +1,17 @@
+<div class="main-posts-container">
+  <p>Posts</p>
+  <div class="grid-posts-container" *ngIf="posts?.length; else noPosts">
+    <div class="post" *ngFor="let post of posts">
+
+      <p-fieldset legend="Title: {{ post?.title }}">
+        <span class="m-0"><b>Post:</b> {{ post?.body }}</span><br>
+        <span class="m-0" style="text-align: left; font-weight: bold">Random number of commenters: {{ post?.commentsCount }}</span>
+      </p-fieldset>
+    </div>
+  </div>
+
+  <ng-template #noPosts><p style="font-size: 16px">There are no posts...</p></ng-template>
+
+</div>
+
+

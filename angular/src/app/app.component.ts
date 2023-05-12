@@ -19,5 +19,10 @@ export class AppComponent {
       icon: 'pi pi-home',
       routerLink: '/user/details/1'
     },
+    {
+      label: 'TASK - №2',
+      icon: 'pi pi-home',
+      routerLink: '/numericArray'
+    },
   ];
 }

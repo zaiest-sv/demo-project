@@ -11,15 +11,14 @@ import { FormsModule } from "@angular/forms";
 import { FileUploadModule } from "primeng/fileupload";
 import { ToastModule } from "primeng/toast";
 import { CardModule } from "primeng/card";
-import { PostListComponent } from './post-list/post-list.component';
-import {PanelModule} from "primeng/panel";
-import {FieldsetModule} from "primeng/fieldset";
-import {MultiSelectModule} from "primeng/multiselect";
-import {DropdownModule} from "primeng/dropdown";
-import {TagModule} from "primeng/tag";
+import { PanelModule } from "primeng/panel";
+import { MultiSelectModule } from "primeng/multiselect";
+import { DropdownModule } from "primeng/dropdown";
+import { TagModule } from "primeng/tag";
+import { PostsModule } from "./user-details/post-list/posts.module";
 
 @NgModule({
-  declarations: [UserListComponent, UserDetailsComponent, PostListComponent],
+  declarations: [UserListComponent, UserDetailsComponent],
   imports: [
     UserRoutes,
     CommonModule,
@@ -32,10 +31,10 @@ import {TagModule} from "primeng/tag";
     ToastModule,
     CardModule,
     PanelModule,
-    FieldsetModule,
     MultiSelectModule,
     DropdownModule,
     TagModule,
+    PostsModule,
   ],
   providers: [],
 })

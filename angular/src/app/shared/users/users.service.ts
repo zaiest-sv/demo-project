@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UserDto } from "./usersDtos";
-import { apiUrl } from "../consts";
+import { UserDto } from "./users.dto";
+import { API_URL } from "../consts";
+import { Router } from "@angular/router";
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly http: HttpClient) {}
+  constructor(private readonly http: HttpClient, private router: Router) {}
 
   getUsers(): Observable<UserDto[]> {
-    return this.http.get<UserDto[]>(`${apiUrl}/users`);
+    return this.http.get<UserDto[]>(API_URL + this.router?.url);
   }
 
   getUserById(id: string | null): Observable<UserDto> {
-    return this.http.get<UserDto>(`${apiUrl}/users/${id}`);
+    return this.http.get<UserDto>(API_URL + this.router?.url);
   }
 }

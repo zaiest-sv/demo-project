@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../../shared/users/users.service';
 import { PostsService } from '../../shared/posts/posts.service';
-import { UserDto } from '../../shared/users/usersDtos';
+import { UserDto } from '../../shared/users/users.dto';
 import { MessageService } from 'primeng/api';
 
 @Component({
@@ -28,8 +28,7 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
-  onUpload(event: any) {
-    this.fileIcon = event;
+  onUpload(event: Event) {
     this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
   }
 }
