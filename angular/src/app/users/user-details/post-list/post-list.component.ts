@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { PostDto } from "../../../shared/posts/posts.dto";
+import { PostDto } from "./dtos/posts.dto";
 import { ActivatedRoute } from "@angular/router";
-import { PostsService } from "../../../shared/posts/posts.service";
+import { PostsService } from "./posts.service";
 
 @Component({
   selector: 'app-post-list',

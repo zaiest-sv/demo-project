@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UserDto } from "./users.dto";
-import { API_URL } from "../consts";
+import { UserDto } from "./dtos/users.dto";
+import { API_URL } from "../shared/consts";
 import { Router } from "@angular/router";
 
 @Injectable()

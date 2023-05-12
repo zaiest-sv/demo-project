@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UsersService } from '../../shared/users/users.service';
-import { PostsService } from '../../shared/posts/posts.service';
-import { UserDto } from '../../shared/users/users.dto';
+import { UsersService } from '../users.service';
+import { PostsService } from './post-list/posts.service';
+import { UserDto } from '../dtos/users.dto';
 import { MessageService } from 'primeng/api';
 
 @Component({
