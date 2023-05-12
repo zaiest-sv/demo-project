@@ -1,0 +1,76 @@
+<div class="card grid dashboard">
+  <div class="col-12 md:col-6 lg:col-4">
+    <div class="user-card card">
+      <div class="user-card-header">
+        <img src="assets/layout/dashboard/bg-head.jpg" class="img-bg-head" alt="prestige-layout">
+      </div>
+      <div class="user-card-content">
+        <div style="display: flex; justify-content: space-between">
+          <div class="avatar-info">
+            <img src="{{this.fileIcon}}" class="img-avatar" alt="prestige-layout">
+            <div>
+              <div class="user-card-name">
+                <span>{{user?.name}}</span>
+              </div>
+              <div class="user-card-username">
+                <span>{{user?.username}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="file-upload flex justify-content-center">
+            <p-toast></p-toast>
+            <p-fileUpload
+              mode="basic"
+              chooseLabel="Choose"
+              name="demo[]"
+              url="https://www.primefaces.org/cdn/api/upload.php"
+              accept="image/*"
+              (onUpload)="onUpload($event)"
+            >
+            </p-fileUpload>
+          </div>
+        </div>
+
+        <!-- details -->
+        <div class="user-detail">
+          <div>
+            <p>
+              <b><i class="user-detail-label">Email:</i></b><br>
+              {{ user?.email }}
+              <br>
+            </p>
+            <p>
+              <b><i class="user-detail-label">Phone:</i></b><br>
+              {{ user?.phone }}
+              <br>
+            </p>
+            <p>
+              <b><i class="user-detail-label">Website:</i></b><br>
+              {{ user?.website }}
+              <br>
+            </p>
+          </div>
+          <div>
+            <p>
+              <b><i class="user-detail-label">Address:</i></b>
+              {{ user?.address?.city }}, {{ user?.address?.suite }}, {{ user?.address?.street }}
+              <br><b class="whiteColor">Zip Code:</b> {{ user?.address?.zipcode }}
+              <br><b class="whiteColor">Geo:</b> lat = {{ user?.address?.geo?.lat }}, lng
+              = {{ user?.address?.geo?.lng }}
+            </p>
+
+            <p>
+              <b><i class="user-detail-label">Company:</i></b>
+              {{ user?.company?.name }}
+              <br><b class="whiteColor">Catch Phrase:</b> {{ user?.company?.catchPhrase }}
+              <br><b class="whiteColor">Bs:</b> lat = {{ user?.company?.bs }}
+            </p>
+          </div>
+        </div>
+
+        <app-post-list [userId]="this.user?.id"></app-post-list>
+
+      </div>
+    </div>
+  </div>
+</div>
