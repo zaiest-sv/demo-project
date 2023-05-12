@@ -6,17 +6,25 @@
 }
 .main-container {
   padding: 5%;
-  table {
-    width: 100%;
-  }
 
-  th.mat-sort-header-sorted {
-    color: black;
-  }
+  .card {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #e1e1e1;
 
-  .link-for-redirect{
-    text-decoration: underline;
-    color: #1D4ED8;
+    table {
+      width: 100%;
+    }
+
+    th.mat-sort-header-sorted {
+      color: black;
+    }
+
+    .link-for-redirect{
+      text-decoration: underline;
+      color: #1D4ED8;
+    }
   }
 }
 

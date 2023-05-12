@@ -1,19 +1,3 @@
-<!--<div class="card">-->
-<!--  <h2>{{ user?.name }}</h2>-->
-<!--  <p>{{ user?.email }}</p>-->
-<!--  <p>{{ user?.phone }}</p>-->
-<!--  <p>{{ user?.website }}</p>-->
-<!--</div>-->
-
-<!--<h3>Posts</h3>-->
-<!--<div *ngFor="let post of posts" class="card">-->
-<!--  <h4>{{ post.title }}</h4>-->
-<!--  <p>{{ post.body }}</p>-->
-<!--  <p>Number of comments: {{ post.comments?.length }}</p>-->
-<!--  &lt;!&ndash;  <div *ngIf="post === posts[0]" class="top-post-label">Top post</div>&ndash;&gt;-->
-<!--  <div class="top-post-label">Top post</div>-->
-<!--</div>-->
-
 <div class="card grid dashboard">
   <div class="col-12 md:col-6 lg:col-4">
     <div class="user-card card">
@@ -33,21 +17,6 @@
               </div>
             </div>
           </div>
-          <!--          <button pbutton="" type="button" icon="pi pi-cog" class="button-icon p-element p-button p-component p-button-icon-only">-->
-          <!--&lt;!&ndash;            <span class="p-button-icon pi pi-cog" aria-hidden="true"></span>&ndash;&gt;-->
-
-          <!--            <p-fileUpload-->
-          <!--              mode="basic"-->
-          <!--              chooseLabel="Choose"-->
-          <!--              name="demo[]"-->
-          <!--              url="https://www.primefaces.org/cdn/api/upload.php"-->
-          <!--              accept="image/*"-->
-          <!--              maxFileSize="1000000"-->
-          <!--              (onUpload)="onUpload($event)"-->
-          <!--            >-->
-          <!--            </p-fileUpload>-->
-          <!--          </button>-->
-
           <div class="file-upload flex justify-content-center">
             <p-toast></p-toast>
             <p-fileUpload

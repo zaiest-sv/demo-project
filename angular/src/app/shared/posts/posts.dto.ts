@@ -4,6 +4,7 @@ export class PostDto {
   title?: string;
   body?: string;
   comments?: CommentOfPostDTO[];
+  commentsCount?: number;
 }
 
 export class CommentOfPostDTO {

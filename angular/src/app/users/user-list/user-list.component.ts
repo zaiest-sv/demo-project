@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from '../../shared/users/users.service';
-import { UserDto } from '../../shared/users/usersDtos';
+import { UserDto } from '../../shared/users/users.dto';
 import { delay } from "rxjs";
 import { Table } from "primeng/table";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Filter } from "../../shared/posts/postsDtos";
-
+import { Filter } from "../../shared/posts/posts.dto";
 
 @Component({
   selector: 'app-user-list',
@@ -29,7 +28,6 @@ export class UserListComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getUsers().pipe(delay(1000)).subscribe((data: UserDto[]) => {
-      console.log('data ', data)
       this.users = data;
       this.loading = false;
       this.filterId = this.users.map(user => ({ label: user.id?.toString(), value: user.id?.toString() }));
@@ -38,6 +36,9 @@ export class UserListComponent implements OnInit {
           this.filterName.push({ label: user.name, value: user.name });
         }
       });
+    }, error => {
+      this.loading = false;
+      console.log('Error: ', error)
     });
 
 
