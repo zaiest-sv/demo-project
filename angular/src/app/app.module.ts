@@ -7,8 +7,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { UsersService } from "./shared/users/users.service";
-import { PostsService } from "./shared/posts/posts.service";
+import { UsersService } from "./users/users.service";
+import { PostsService } from "./users/user-details/post-list/posts.service";
 import { PanelModule } from "primeng/panel";
 import { MenubarModule } from "primeng/menubar";
 import {MessageService} from "primeng/api";
