@@ -14,4 +14,4 @@ import { CommonModule } from "@angular/common";
     PostListComponent
   ]
 })
-export class PostsModule {}
+export class PostListModule {}

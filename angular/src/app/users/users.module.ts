@@ -15,7 +15,7 @@ import { PanelModule } from "primeng/panel";
 import { MultiSelectModule } from "primeng/multiselect";
 import { DropdownModule } from "primeng/dropdown";
 import { TagModule } from "primeng/tag";
-import { PostsModule } from "./user-details/post-list/posts.module";
+import { PostListModule } from "./user-details/post-list/post-list.module";
 
 @NgModule({
   declarations: [UserListComponent, UserDetailsComponent],
@@ -34,7 +34,7 @@ import { PostsModule } from "./user-details/post-list/posts.module";
     MultiSelectModule,
     DropdownModule,
     TagModule,
-    PostsModule,
+    PostListModule,
   ],
   providers: [],
 })

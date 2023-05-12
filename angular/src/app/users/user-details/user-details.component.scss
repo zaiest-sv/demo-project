@@ -1,11 +1,4 @@
-//@media screen and (min-width: 992px) {
-//  .lg\:col-4 {
-//    flex: 0 0 auto;
-//    padding: 0.5rem;
-//    width: 33.3333%;
-//  }
-//}
-*{
+* {
   font-family: Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
 }
 
@@ -43,7 +36,7 @@
         height: 80px;
       }
 
-      .user-card-name{
+      .user-card-name {
         margin-top: 10px;
         margin-left: 25px;
         color: white;
@@ -72,7 +65,9 @@
     }
 
     @media (min-width: 600px) {
-      .user-detail { grid-template-columns: repeat(2, 1fr); }
+      .user-detail {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 }

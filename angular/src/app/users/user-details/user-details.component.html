@@ -55,7 +55,8 @@
               <b><i class="user-detail-label">Address:</i></b>
               {{ user?.address?.city }}, {{ user?.address?.suite }}, {{ user?.address?.street }}
               <br><b class="whiteColor">Zip Code:</b> {{ user?.address?.zipcode }}
-              <br><b class="whiteColor">Geo:</b> lat = {{ user?.address?.geo?.lat }}, lng = {{ user?.address?.geo?.lng }}
+              <br><b class="whiteColor">Geo:</b> lat = {{ user?.address?.geo?.lat }}, lng
+              = {{ user?.address?.geo?.lng }}
             </p>
 
             <p>
@@ -69,41 +70,6 @@
 
         <app-post-list [userId]="this.user?.id"></app-post-list>
 
-<!--        <p-card>-->
-<!--          <ng-template pTemplate="header">-->
-<!--            <h4>{{ posts?.title }}</h4>-->
-<!--          </ng-template>-->
-
-<!--          <ng-template pTemplate="content">-->
-<!--            <p>{{ posts?.body }}</p>-->
-<!--          </ng-template>-->
-
-<!--          <ng-template pTemplate="footer">-->
-<!--            <div class="comment-section">-->
-<!--              <h5>Comments:</h5>-->
-<!--              <ul>-->
-<!--                <li *ngFor="let comment of posts?.comments">{{ comment }}</li>-->
-<!--              </ul>-->
-<!--            </div>-->
-<!--          </ng-template>-->
-<!--        </p-card>-->
-
-<!--        <div class="user-detail">-->
-<!--          <ul>-->
-<!--            <li> email-->
-<!--              <div class="value">{{ user?.email }} <i class="pi pi-arrow-circle-right"></i></div>-->
-<!--            </li>-->
-<!--            <li> Address-->
-<!--              <div class="value">{{ user?.address?.city }} <i class="pi pi-arrow-circle-right"></i></div>-->
-<!--            </li>-->
-<!--            <li> Likes-->
-<!--              <div class="value">880 <i class="pi pi-arrow-circle-right"></i></div>-->
-<!--            </li>-->
-<!--            <li> Views-->
-<!--              <div class="value">1298 <i class="pi pi-arrow-circle-right"></i></div>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </div>-->
       </div>
     </div>
   </div>
