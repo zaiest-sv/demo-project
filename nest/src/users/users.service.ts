@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { AxiosResponse } from 'axios';
-import { UserDto } from './dto/users.dto';
-import { API_URL } from '../consts';
+import { UserDto } from './dtos/users.dto';
+import { API_URL } from '../shared/consts';
 
 @Injectable()
 export class UsersService {

@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { UsersService } from '../../shared/users/users.service';
-import { UserDto } from '../../shared/users/users.dto';
+import { UsersService } from '../users.service';
+import { UserDto } from '../dtos/users.dto';
 import { delay } from "rxjs";
 import { Table } from "primeng/table";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Filter } from "../../shared/posts/posts.dto";
+import { IFilter } from "../../shared/filter.interface";
 
 @Component({
   selector: 'app-user-list',
@@ -17,8 +17,8 @@ export class UserListComponent implements OnInit {
 
   users: UserDto[] = [];
   loading = true;
-  filterId: Filter[] = [];
-  filterName: Filter[] = [];
+  filterId: IFilter[] = [];
+  filterName: IFilter[] = [];
 
   constructor(
     private router: Router,

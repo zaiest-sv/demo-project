@@ -1,6 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { UserDto } from './dto/users.dto';
+import { UserDto } from './dtos/users.dto';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 

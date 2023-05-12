@@ -2,9 +2,10 @@ import { AxiosResponse } from 'axios';
 import { forkJoin, Observable } from 'rxjs';
 import { Injectable, Param } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
-import { CommentOfPostDTO, PostDto } from './dto/post.dto';
+import { PostDto } from './dtos/post.dto';
+import { CommentDto } from './dtos/comment.dto';
 import { map, mergeMap } from 'rxjs/operators';
-import { API_URL } from '../../consts';
+import { API_URL } from '../shared/consts';
 
 @Injectable()
 export class PostsService {
@@ -18,7 +19,7 @@ export class PostsService {
         const posts = postsResponse.data;
         const requests = posts.map((post) =>
           this.getCommentsByPostId(post.id).pipe(
-            map((commentsResponse: AxiosResponse<CommentOfPostDTO[]>) => {
+            map((commentsResponse: AxiosResponse<CommentDto[]>) => {
               const comments = commentsResponse.data;
               const commentsCount = Math.floor(Math.random() * 10);
               return {
@@ -44,10 +45,8 @@ export class PostsService {
     return this.httpService.get<PostDto[]>(`${API_URL}/posts?userId=${userId}`);
   }
 
-  getCommentsByPostId(
-    postId: number,
-  ): Observable<AxiosResponse<CommentOfPostDTO[]>> {
-    return this.httpService.get<CommentOfPostDTO[]>(
+  getCommentsByPostId(postId: number): Observable<AxiosResponse<CommentDto[]>> {
+    return this.httpService.get<CommentDto[]>(
       `${API_URL}/comments?postId=${postId}`,
     );
   }
